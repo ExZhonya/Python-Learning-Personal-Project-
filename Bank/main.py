@@ -56,20 +56,19 @@ def show_menu(money):
 
 def account(user, uid, money):
     clear()
+    while True:
+        print(f"""
+        Account Details
+        User  : {user}
+        UID   : {uid}
+        Money : {money}
+        
+        Press 1 to go back
+            """)
+        x = getch()
+        if x == "1":
+            break
 
-    print(f"""
-    Account Details
-    User  : {user}
-    UID   : {uid}
-    Money : {money}
-    
-    Press 1 to go back
-        """)
-    x = getch()
-    if x == "1":
-        show_menu(money)
-    else:
-        account(user, uid, money)
 
 def depo(money):
     clear()
