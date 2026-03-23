@@ -45,6 +45,8 @@ def get_item(drop):
     else:
         rarity = "rare"
     
+    # get all the items in the drops,
+    # and put all the items in result
     for item in drop:
         if item["rarity"] == rarity:
             result.append(item)
@@ -54,11 +56,13 @@ def get_item(drop):
     print(f"congrats! you got a {picked['rarity']} {picked['name']}!")
     item_name = picked["name"]
 
-    inv = player["inventory"]
-    if item_name in inv:
-        inv[item_name] += 1
+# basically checking if the item is already in inventory
+# if yes, add 1 upvalue
+# if not, = 1 to add it, to make it exist
+    if item_name in player["inventory"]:
+        player["inventory"][item_name] += 1
     else:
-        inv[item_name] = 1
+        player["inventory"][item_name] = 1
 
 def interface():
     clear()
